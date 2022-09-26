@@ -1,0 +1,12 @@
+@startuml
+
+node virtual_receipt_printer
+node pos_terminal
+node real_receipt_printer
+node database_server
+pos_terminal -- virtual_receipt_printer : TCP/IP over Ethernet
+virtual_receipt_printer -- real_receipt_printer : TCP/IP over Ethernet
+virtual_receipt_printer -- database_server : TCP/IP over Ethernet
+pos_terminal .. real_receipt_printer : virtual connection
+
+@enduml
